@@ -9,9 +9,9 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	/*	
-		AfficherExt ae = new AfficherExt();
-		File file1 = new File("Music.mp3");
+		
+		/*AfficherType ae = new AfficherExt();
+		File file1 = new File("Music.jog");
 		File file2 = new File("Video.mp4");
 		File file3 = new File("Code.c");
 		ae.AfficherExtension(file1);
