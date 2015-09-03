@@ -1,9 +1,11 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Main {
 
 	/**
 	 * @param args
+	 * @throws FileNotFoundException 
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,7 +21,7 @@ public class Main {
 			System.out.println("gdruidgh"); 
 		}*/
 		
-		File folder = new File("Tes");
+		/*File folder = new File("Tes");
 		File folder2 = new File("PasDossier.txt");
 		File folder3 = new File("Test");
 		Lister liste = new Lister();
@@ -30,7 +32,10 @@ public class Main {
 		liste.ListerExt(folder3);
 		System.out.println("-------------------------------------------------");
 		liste.ListerType(folder3);
+		*/
 		
+		Tri tri = new Tri();
+		tri.TriParNom(new File("TestTri"), 1);
 		
 		
 	}

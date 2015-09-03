@@ -2,7 +2,7 @@ import java.io.File;
 
 
 public class CreerDossier {
-	public CreerDossier(String chemin){
+	public static void Creer(String chemin){
 		
 		String dossier;
 		File f = new File(chemin);
