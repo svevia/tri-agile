@@ -34,8 +34,9 @@ public class Main {
 		liste.ListerType(folder3);
 		*/
 		
-		Tri tri = new Tri();
-		tri.TriParNom(new File("TestTri"), 1);
+		File TestTri = new File("TestTri");
+		TriParNom tri = new TriParNom();
+		tri.Tri(TestTri, "Cours");
 		
 		
 	}

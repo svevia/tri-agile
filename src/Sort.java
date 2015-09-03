@@ -61,11 +61,11 @@ public class Sort {
 		return newTable;
 	}
 	
-	public List<File> filter(List<File> fichiers, Filtre filtre) {
+	/*public List<File> filter(List<File> fichiers, Filtre filtre) {
 		for (File f : fichiers)
 		 if(filtre.accept(f))
 			   
-	}
+	}*/
 	
 	public static void main(String[] args){
 		/*Sort sort = new Sort();
