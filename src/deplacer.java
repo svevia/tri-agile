@@ -8,6 +8,9 @@ public class deplacer {
 		File destination = null;
 		source = new File(src);
 		destination = new File(dest);
+		if(!source.exists()){
+			System.out.println("fichier source n'existe pas");
+		}
 		source.renameTo(destination);
 		System.out.println("deplacement ok");
 	}
