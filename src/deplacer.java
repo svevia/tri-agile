@@ -11,8 +11,10 @@ public class deplacer {
 		if(!source.exists()){
 			System.out.println("fichier source n'existe pas");
 		}
-		source.renameTo(destination);
-		System.out.println("deplacement ok");
+		else{
+			source.renameTo(destination);
+			System.out.println("deplacement ok");
+		}
 	}
 
 }
