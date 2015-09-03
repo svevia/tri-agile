@@ -12,15 +12,19 @@ public class Type {
 			case "wav":
 			case "aac":
 				return "music";
+			case "txt":
+				return "texte";
+			case "c":
+				return "code";
 		}
 		return null;
 		
 	}
-	public static void main(String[] args){
+	/*public static void main(String[] args){
 		Type Ext = new Type();
 		String type = Ext.getType("mp4");
 		System.out.println(type);
-	}
+	}*/
 }
 
 

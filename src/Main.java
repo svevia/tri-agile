@@ -20,12 +20,16 @@ public class Main {
 		}*/
 		
 		File folder = new File("Tes");
-		ListerExt liste = new ListerExt();
-		liste.Lister(folder);
 		File folder2 = new File("PasDossier.txt");
-		liste.Lister(folder2);
 		File folder3 = new File("Test");
-		liste.Lister(folder3);
+		Lister liste = new Lister();
+		liste.ListerExt(folder);
+		System.out.println("-------------------------------------------------");
+		liste.ListerExt(folder2);
+		System.out.println("-------------------------------------------------");
+		liste.ListerExt(folder3);
+		System.out.println("-------------------------------------------------");
+		liste.ListerType(folder3);
 		
 		
 		
