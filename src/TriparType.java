@@ -6,7 +6,9 @@ import java.util.List;
 
 public class TriparType {
 	
-	public TriparType(String chemin){
+	public TriparType(String chemin, String text, boolean b){
+		
+		if(!b){
 		File dossier = new File(chemin);
 		if(dossier.exists()&& dossier.isDirectory()){
 			File[] ListeFichier= dossier.listFiles(); 
@@ -15,6 +17,7 @@ public class TriparType {
 			for(File f:ListeFichier){
 				if(typeconnue.contains(Type.getType(f.getAbsolutePath()))){
 					try {
+						
 						new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
 					} catch (FileNotFoundException e) {
 						// TODO Auto-generated catch block
@@ -36,13 +39,31 @@ public class TriparType {
 					
 				}
 			}
-			}
+		} else {
+			File dossier = new File(chemin);
+			if(dossier.exists()&& dossier.isDirectory()){
+				File[] ListeFichier= dossier.listFiles(); 
+				List<String> typeconnue = new ArrayList<String>();
+						
+				for(File f:ListeFichier){
+					System.out.println(f.getParent());
+					if(typeconnue.contains(Type.getType(f.getAbsolutePath()))){
+						
+							new Delete(f);
+							System.out.println("suppression");
+						
+						
+					}	
+					}
+				}
+		}
+	}
 		
 		
 		
 		
 	
 public static void main(String[] args){
-	new TriparType("/home/infoetu/svevia/test");
+	new TriparType("/home/infoetu/cottona/test", "musique", true);
 }
 }

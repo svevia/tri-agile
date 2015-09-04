@@ -6,7 +6,8 @@
 public class TriParExtension {
 
 		
-		public TriParExtension(String chemin){
+		public TriParExtension(String chemin, String s, boolean b){
+			if(!b){
 			File dossier = new File(chemin);
 			if(dossier.exists()&& dossier.isDirectory()){
 				File[] ListeFichier= dossier.listFiles(); 
@@ -35,14 +36,30 @@ public class TriParExtension {
 						
 					}
 				}
-				}
+			} else {
+				File dossier = new File(chemin);
+				if(dossier.exists()&& dossier.isDirectory()){
+					File[] ListeFichier= dossier.listFiles(); 
+					List<String> extconnue = new ArrayList<String>();
+							
+					for(File f:ListeFichier){
+						System.out.println(f.getParent());
+						if(s.equals(Afficher.AfficherExtension(f))){
+							new Delete(f);
+						}
+						
+							
+						}
+					}
+			}
+		}
 			
 			
 			
 			
 		
 	public static void main(String[] args){
-		new TriParExtension("/home/infoetu/svevia/test");
+		new TriParExtension("/home/infoetu/cottona/test", "mp3", true);
 	}
 	}
 

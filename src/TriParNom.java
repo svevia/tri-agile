@@ -6,12 +6,19 @@ import java.util.Comparator;
 
 public class TriParNom {
 
-	public void Tri(File file, String text) {
+	public TriParNom(File file, String text, boolean b) {
 		for(File file2 : file.listFiles()) {
 			if(file2.getName().indexOf(text) == 0) {
+				if(!b){
 				CreerDossier.Creer(file.getAbsolutePath() + "/" + text);
+				}
 				try {
-					new deplacer(file2.getAbsolutePath(), file.getAbsolutePath() + "/" + text + "/" + file2.getName());
+					if(b){
+						new Delete(file2);
+					} else {
+						new deplacer(file2.getAbsolutePath(), file.getAbsolutePath() + "/" + text + "/" + file2.getName());
+					}
+					
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -19,4 +26,8 @@ public class TriParNom {
 			}
 		}
 	}
+	public static void main(String[]args){
+		new TriParNom(new File("/home/infoetu/cottona/test"), "fichier", true);
+	}
 }
+

@@ -11,7 +11,7 @@ public class CreationExemple {
 	int cpt = 0;
 	for(int i = 0; i<100; i++){
 		String ext = tab[cpt];
-		File f = new File("/home/infoetu/svevia/test/fichier" + i+"."+ext);
+		File f = new File("/home/infoetu/cottona/test/fichier" + i+"."+ext);
 		try {
 			f.createNewFile();
 		} catch (IOException e) {
