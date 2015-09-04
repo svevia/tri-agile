@@ -8,7 +8,7 @@ public class Delete {
 			System.out.println("fichier n'existe pas");
 		}
 		else{
-			source.deleteOnExit();
+			source.delete();
 			System.out.println("suppression ok");
 		}
 	}

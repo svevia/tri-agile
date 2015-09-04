@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -24,6 +25,7 @@ public class PanelChoixModeTri extends JPanel {
 	private JTextArea area;
 	private Fenetre f;
 	private JRadioButton[] groups;
+	private JCheckBox box;
 	
 	public PanelChoixModeTri(Fenetre f) {
 		this.f = f;
@@ -31,6 +33,7 @@ public class PanelChoixModeTri extends JPanel {
 		title = BorderFactory.createTitledBorder(border, "Choisissez le mode de tri :");
 		group = new ButtonGroup();
 		groups = new JRadioButton[]{new JRadioButton("Nom"), new JRadioButton("Extension"), new JRadioButton("Type"), new JRadioButton("Date")};
+		box = new JCheckBox("Supprimer");
 		/*nom = new JRadioButton("Nom");
 		ext = new JRadioButton("Extension");
 		type = new JRadioButton("Type");
@@ -55,6 +58,12 @@ public class PanelChoixModeTri extends JPanel {
 		add(groups[2]);
 		add(new JLabel(""));
 		add(groups[3]);
+		add(box);
+		
+	}
+	
+	public JCheckBox getBox() {
+		return box;
 	}
 	
 	public JTextArea getArea() {
