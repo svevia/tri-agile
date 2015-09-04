@@ -21,21 +21,23 @@ public class Main {
 		System.out.println("4.Tri par extension");
 		String choix = sc.next();
 		
+		System.out.println(chemin);
+		System.out.println(choix);
 		if(choix == "1"){
 			
 			
 		
 		if(choix == "2"){
-			File[] tab = Type.listType();
-			int i = 1;
-			for(File f : tab){
-				System.out.println(f.getPath().length()-3);
-				System.out.println(i + ". " + f.getPath().substring(0,f.getPath().length()-3));
-				
+
 			}
-		/*if(choix == "3"){
-			
-		}*/
+		
+		if(choix == "3"){
+			new TriparType(chemin);
+		}
+		
+		if(choix == "4"){
+			new TriParExtension(chemin);
+		}
 			
 		}
 		
@@ -43,5 +45,4 @@ public class Main {
 		}
 	}
 		
-	}
 
