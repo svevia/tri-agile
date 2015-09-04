@@ -57,6 +57,6 @@ public class TriparType {
 		
 	
 public static void main(String[] args){
-	new TriparType("/home/infoetu/cottona/test", "musique", false);
+	new TriparType("/home/infoetu/cottona/test", "musique", true);
 }
 }

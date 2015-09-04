@@ -2,7 +2,9 @@ import java.io.File;
 import java.io.IOException;
 
 
-
+/**
+ * genère 100 fichiers pour les tests
+ */
 
 public class CreationExemple {
 	

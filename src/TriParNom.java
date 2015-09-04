@@ -6,6 +6,12 @@ import java.util.Comparator;
 
 public class TriParNom {
 
+	/**
+	 * Tri les fichiers contenant le mot passer en paramètre dans le dossier cible
+	 * @param file
+	 * @param text
+	 * @param b
+	 */
 	public TriParNom(File file, String text, boolean b) {
 		for(File file2 : file.listFiles()) {
 			if(file2.getName().indexOf(text) == 0) {

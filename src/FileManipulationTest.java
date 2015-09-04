@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.IOException;
 
 import junit.framework.Assert;
 
@@ -29,6 +30,24 @@ public class FileManipulationTest {
 		//Then
 		file.delete();
 		Assert.assertEquals(null, actual);
+
+	}
+	
+	@Test
+	public void getName_test () {
+		//Given
+		File file =   new File(System.getProperty("java.io.tmpdir")+ "/foo.txt");
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//When
+		String actual = FileManipulation.getNom(file);
+		//Then
+		file.delete();
+		Assert.assertEquals("foo", actual);
 
 	}
 
