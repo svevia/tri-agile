@@ -16,43 +16,36 @@ public class TriparType {
 					
 			for(File f:ListeFichier){
 				if(typeconnue.contains(Type.getType(f.getAbsolutePath()))){
-					try {
-						
-						new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
-					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-					else {
-						if(Type.getType(f.getAbsolutePath()) != null){
-							typeconnue.add(Type.getType(f.getAbsolutePath()));
-							CreerDossier.Creer(chemin + "/" + Type.getType(f.getAbsolutePath()));
-							try {
-								new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
-							} catch (FileNotFoundException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+						try {
+							
+							new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
 					}
-					
-				}
+						else {
+							if(Type.getType(f.getAbsolutePath()) != null){
+								typeconnue.add(Type.getType(f.getAbsolutePath()));
+								CreerDossier.Creer(chemin + "/" + Type.getType(f.getAbsolutePath()));
+								try {
+									new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
+								} catch (FileNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							}
+						}
+			}
 			}
 		} else {
 			File dossier = new File(chemin);
 			if(dossier.exists()&& dossier.isDirectory()){
 				File[] ListeFichier= dossier.listFiles(); 
-				List<String> typeconnue = new ArrayList<String>();
 						
 				for(File f:ListeFichier){
-					System.out.println(f.getParent());
-					if(typeconnue.contains(Type.getType(f.getAbsolutePath()))){
-						
+					if(FileManipulation.getType(f).equals(text)){
 							new Delete(f);
-							System.out.println("suppression");
-						
-						
 					}	
 					}
 				}
@@ -64,6 +57,6 @@ public class TriparType {
 		
 	
 public static void main(String[] args){
-	new TriparType("/home/infoetu/cottona/test", "musique", true);
+	new TriparType("/home/infoetu/cottona/test", "musique", false);
 }
 }
