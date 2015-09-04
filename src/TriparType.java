@@ -13,7 +13,6 @@ public class TriparType {
 			List<String> typeconnue = new ArrayList<String>();
 					
 			for(File f:ListeFichier){
-				System.out.println(f.getParent());
 				if(typeconnue.contains(Type.getType(f.getAbsolutePath()))){
 					try {
 						new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
@@ -23,13 +22,15 @@ public class TriparType {
 					}
 				}
 					else {
-						typeconnue.add(Type.getType(f.getAbsolutePath()));
-						CreerDossier.Creer(chemin + "/" + Type.getType(f.getAbsolutePath()));
-						try {
-							new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
-						} catch (FileNotFoundException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+						if(Type.getType(f.getAbsolutePath()) != null){
+							typeconnue.add(Type.getType(f.getAbsolutePath()));
+							CreerDossier.Creer(chemin + "/" + Type.getType(f.getAbsolutePath()));
+							try {
+								new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Type.getType(f.getAbsolutePath())+ "/" + f.getName());
+							} catch (FileNotFoundException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						}
 					}
 					

@@ -14,9 +14,9 @@ public class TriParExtension {
 						
 				for(File f:ListeFichier){
 					System.out.println(f.getParent());
-					if(extconnue.contains(Afficher.AfficherExtension(f))){
+					if(extconnue.contains(FileManipulation.getExtension(f))){
 						try {
-							new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Afficher.AfficherExtension(f)+ "/" + f.getName());
+							new deplacer(f.getAbsolutePath(), f.getParent() + "/" + FileManipulation.getExtension(f)+ "/" + f.getName());
 						} catch (FileNotFoundException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -24,9 +24,9 @@ public class TriParExtension {
 					}
 						else {
 							extconnue.add(Type.getType(f.getAbsolutePath()));
-							CreerDossier.Creer(chemin + "/" + Afficher.AfficherExtension(f));
+							CreerDossier.Creer(chemin + "/" + FileManipulation.getExtension(f));
 							try {
-								new deplacer(f.getAbsolutePath(), f.getParent() + "/" + Afficher.AfficherExtension(f)+ "/" + f.getName());
+								new deplacer(f.getAbsolutePath(), f.getParent() + "/" + FileManipulation.getExtension(f)+ "/" + f.getName());
 							} catch (FileNotFoundException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();

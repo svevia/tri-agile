@@ -1,10 +1,10 @@
 import java.io.File;
 
-public class Afficher {
+public class FileManipulation {
 
 	Type type = new Type("test");
 	
-	static public String AfficherExtension(File file) {
+	static public String getExtension(File file) {
 			String name = file.getName();
 			String res = "";
 			for(int i = name.length() - 1; i >= 0; i--) {
@@ -17,7 +17,7 @@ public class Afficher {
 	}
 	
 	
-	static public String AfficherNom(File file) {
+	static public String getNom(File file) {
 		String name = file.getName();
 		String res = "";
 		for(int i = name.length() - 1; i >= 0; i--) {
@@ -25,20 +25,16 @@ public class Afficher {
 				res = name.substring(0,i);
 			}
 		}
-		System.out.println("Le fichier " + name + " qui a pour extension \"" + res + "\".");
+		System.out.println("Le fichier " + name + " qui a pour nom \"" + res + "\".");
 		return res;
 	}
 	
 	
-	static public String AfficherType(File file) {
-		String name = file.getName();
+	static public String getType(File file) {
+		final String name = file.getName();
+		System.out.println(name);
 		String ext = "";
-		for(int i = name.length() - 1; i >= 0; i--) {
-			if(name.charAt(i) == '.') {
-				ext = name.substring(i+1);
-			}
-		}
-		String res = Type.getType(ext);
+		String res = Type.getType(file.getAbsolutePath());
 		System.out.println("Le fichier " + name + " qui a pour type \"" + res + "\".");
 		return res;
 	}

@@ -32,8 +32,11 @@ public class Type {
 	}
 	
 	public static String getType(String file){
+		if(new File(file).isDirectory()){
+			return null;
+		}
 		
-		String extension = Afficher.AfficherExtension(new File(file));
+		String extension = FileManipulation.getExtension(new File(file));
 		
 		File fichiersTypes = new File("lib/types");
 		File[] listefile=fichiersTypes.listFiles();	
@@ -46,7 +49,7 @@ public class Type {
 				String ligne = buff.readLine();
 				while (ligne!=null){
 					if(extension.equals(ligne)){
-						return Afficher.AfficherNom(f);
+						return FileManipulation.getNom(f);
 					}
 					ligne = buff.readLine();
 				}

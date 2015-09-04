@@ -2,7 +2,7 @@ import java.io.File;
 
 public class Lister {
 	
-	Afficher folder = new Afficher();
+	FileManipulation folder = new FileManipulation();
 	
 	public void ListerExt(File file){
 		
@@ -17,7 +17,7 @@ public class Lister {
 			File[] listefile=file.listFiles();	
 			System.out.println("Le dossier "+ file.getName() + " contient : ");
 			for(int i=0; i<listefile.length;i++){
-				folder.AfficherExtension(listefile[i]);
+				folder.getExtension(listefile[i]);
 			}
 		}
 		
@@ -36,7 +36,7 @@ public class Lister {
 				File[] listefile=file.listFiles();	
 				System.out.println("Le dossier "+ file.getName() + " contient : ");
 				for(int i=0; i<listefile.length;i++){
-					folder.AfficherType(listefile[i]);
+					folder.getType(listefile[i]);
 				}
 			}
 			
