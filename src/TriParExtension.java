@@ -44,7 +44,7 @@ public class TriParExtension {
 							
 					for(File f:ListeFichier){
 						System.out.println(f.getParent());
-						if(s.equals(Afficher.AfficherExtension(f))){
+						if(s.equals(FileManipulation.getExtension(f))){
 							new Delete(f);
 						}
 						
