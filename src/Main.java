@@ -11,7 +11,7 @@ public class Main {
 	 * @throws FileNotFoundException 
 	 */
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		System.out.println("chemin source de triage :");
 		String chemin = sc.next();
 		System.out.println("Choisissez votre type de tri :");
@@ -41,7 +41,8 @@ public class Main {
 			
 		}
 		
-		
+		*/
+		new Fenetre();
 		}
 	}
 		
